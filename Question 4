@@ -1,0 +1,31 @@
+import java.io.FileReader;
+import java.io.IOException;
+
+public class TextFileReadingExample1 {
+  public static void main(String[] args) {
+        
+        /**Accessing Record in LowerClassMan File**/
+        try {
+            FileReader cur = new FileReader("LowerClassMan.txt");
+            int txt;
+            while ((txt = cur.read()) != -1) {
+                System.out.print((char) txt);
+            }
+            cur.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        /**Accessing Each Record in UpperClass Man File**/
+        try{
+            FileReader cur2= new FileReader("UpperClassMan.txt");
+            int txt2;
+            while((txt2=cur2.read()) !=-1)
+            {
+                System.out.print((char) txt2);
+            }
+            cur2.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
