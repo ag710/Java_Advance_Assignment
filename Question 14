@@ -1,0 +1,47 @@
+import java.util.*;
+import java.io.*;
+class Name
+{
+    public String fnm,lnm;
+    Name(String fnm, String lnm)
+    {
+        this.fnm=fnm;
+        this.lnm=lnm;
+    }
+}
+
+public class Main {
+ public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter your Choice:");
+    System.out.println("\n1.Accept first name and surname\n2.display total name\n3.Exit.");
+    int ch=Integer.parseInt(sc.nextLine());
+    Vector v1=new Vector();
+    Vector<Name> v2=new Vector<Name>();
+
+    while(ch !=3)
+    {
+        if(ch==1)
+        {
+            System.out.println("How many persons :");
+            int n=Integer.parseInt(sc.nextLine());
+            for(int i=1;i<=n;i++)
+            {
+                System.out.println("enter the first name of person number :"+(i));
+                String fn =sc.nextLine();
+                System.out.println("enter the last name of person number :"+(i));
+                String ln =sc.nextLine();
+                 v1.add( new Name( fn, ln));
+            }
+        }
+        System.out.println("\n\n Enter the choice:");
+        System.out.println("\n1.Accept first name and surname\n \n2.display total name\n3.Exit.");
+                ch=Integer.parseInt(sc.nextLine());
+        if(ch==2)
+        {
+            System.out.println("\n Total no. of names entered are:"+v1.size()+"\n\n");
+        }
+    }
+    System.out.println("Program Ends Here!!");
+}
+}
