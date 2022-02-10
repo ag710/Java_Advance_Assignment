@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.lang.Package;
+class Dish{
+    int dishID;
+    String dishName;
+    private String creationTime;
+    
+    public Dish(int dishID, String dishName, String creationTime)
+    {
+        super();
+        this.dishID=dishID;
+        this.dishName=dishName;
+        this.creationTime=creationTime;
+        
+    }
+    @Override
+    public String toString()
+    {
+        return "Dish [dishID=" + dishID 
+                + ", dishName=" + dishName 
+                + ", creationTime=" + creationTime
+                +  "]";
+    }
+}
+class Menu{
+      static {
+     ArrayList<Dish> menuList=new ArrayList<Dish>();
+        menuList.add(new Dish(01,"Gulab Jamun","6:00 PM"));
+        menuList.add(new Dish(02,"Kadhai Paneer","3:00 PM"));
+        menuList.add(new Dish(03,"Mix Veg","12:00 PM"));
+        for( Dish d: menuList)
+        {
+            System.out.println(d.dishName);
+        }
+      }
+          
+                 
+}
+
+public class Restaurant
+{
+    public static void main(String[] args)
+    {
+        int ch;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Press 1 to display Dishes ");
+        System.out.println("Press 2 to search Dish");
+        ch=sc.nextInt();
+        if(ch==1)
+        {
+            System.out.println("Here is the list of dishes:");
+            Menu c1= new Menu();
+        }
+        if(ch==2)
+        {
+           int val;
+           val=sc.nextInt();
+     ArrayList<Dish> menuList=new ArrayList<Dish>();
+        menuList.add(new Dish(01,"Gulab Jamun","6:00 PM"));
+        menuList.add(new Dish(02,"Kadhai Paneer","3:00 PM"));
+        menuList.add(new Dish(03,"Mix Veg","12:00 PM"));
+        for( Dish d: menuList)
+        {
+            if(val==d.dishID)
+            {
+               System.out.println(d);
+               break;
+            }
+        }
+        }
+    }
+}
